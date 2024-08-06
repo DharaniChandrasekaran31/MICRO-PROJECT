@@ -1,0 +1,43 @@
+{
+  "expense": [
+    {
+      "Date": "10-08-2003",
+      "Reason": "Food",
+      "Expense": "700"
+    },
+    {
+      "Date": "30-07-2004",
+      "Reason": "Travel",
+      "Expense": "7000"
+    },
+    {
+      "Date": "2024-08-22",
+      "Reason": "adac",
+      "Expense": "345"
+    },
+    {
+      "id": "3466",
+      "Date": "2024-08-02",
+      "Reason": "dress",
+      "Expense": "1000"
+    },
+    {
+      "id": "8e3f",
+      "Date": "2024-08-16",
+      "Reason": "food",
+      "Expense": "120"
+    },
+    {
+      "id": "c353",
+      "Date": "2024-08-22",
+      "Reason": "122",
+      "Expense": "abc"
+    },
+    {
+      "id": "5bb2",
+      "Date": "2024-08-16",
+      "Reason": "food",
+      "Expense": "345"
+    }
+  ]
+}

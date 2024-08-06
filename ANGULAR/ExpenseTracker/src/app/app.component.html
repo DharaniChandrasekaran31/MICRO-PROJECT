@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Expense Tracking System</h1><br><br>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <form #myForm="ngForm" ngNativeValidate>
+                        <div class="form-group">
+                            <label for="Date">Date</label>
+                            <input type="date" class="form-control" name="Date" #Date="ngModel" ngModel required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+                                    >
+                        </div>
+                        <div *ngIf="Date.touched">
+                            <div *ngIf="Date.errors?.['required']">
+                                <b style="color: red;">Date is required</b>
+                            </div>
+                            <div *ngIf="Date.errors?.['pattern']">
+                                <b style="color: red;">Invalid Date</b>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Reason">Reason</label>
+                            <input type="text" class="form-control" name="Reason" #Reason="ngModel" ngModel/>
+                        </div>
+                        <div class="form-group">
+                            <label for="Expense">Expense</label>
+                            <input type="text" class="form-control" name="Expense"#Expense="ngModel" ngModel/>
+                        </div>
+                        <button class="btn btn-success" (click)="insertExpense(myForm.value)"> Insert </button>
+                        &nbsp;&nbsp;
+                        <button class="btn btn-warning" (click)="updateExpense(myForm.value)"> Update </button>
+                        &nbsp;&nbsp;
+                        <button class="btn btn-success" (click)="deleteExpense(myForm.value)"> Delete </button>
+                        &nbsp;&nbsp;
+                        <button class="btn btn-info" (click)="findExpense(myForm.value)" > Find </button>
+                        &nbsp;&nbsp;
+                        <button class="btn btn-info" (click)="findAllExpense()"> Find All </button>
+                        &nbsp;&nbsp;
+                     </form>
+                </div>
+            </div>
+            <br>
+            <h3> {{ result }}</h3>
+            <div style="width: 100%;" *ngIf="flag">
+                <table width="80%" align="center" class="table table-borderd">
+                    <tr>
+                        <th>Date</th>
+                        <th>Reason</th>
+                        <th>Expense</th>
+                    </tr> 
+                    <tr *ngFor="let exp of expenseArr">
+                        <td> {{exp.Date}} </td>
+                        <td> {{exp.Reason}} </td>
+                        <td> {{exp.Expense}} </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
